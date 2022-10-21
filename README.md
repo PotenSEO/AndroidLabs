@@ -1,16 +1,8 @@
-# flutterprojects
+Descripción del proyecto
 
-A new Flutter project.
+El proyecto consiste en el desarrollo de una aplicación móvil enfocada en turismo. Cada grupo debe seleccionar un municipio o ciudad de Colombia y desarrollarle su aplicación móvil. La aplicación debe tener:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Sistema de Login. Permite registrarse e iniciar sesión en la aplicación.
+Lista de sitios turísticos. Permite visualizar un listado de sitios turísticos del municipio o ciudad seleccionado.
+Detalle del sitio turístico. Al seleccionar uno de los sitios del listado se abre el detalle del sitio con información más detallada del mismo y la posibilidad de visualizarlo en un mapa.
+Sitios Favoritos. Sección en el que se visualizan los sitios turísticos favoritos que el usuario ha decidido almacenar en su dispositivo.
