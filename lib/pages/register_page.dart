@@ -99,6 +99,16 @@ class _RegisterPageState extends State<RegisterPage> {
                       //_onRegisterButtonClicked();
                     },
                     child: const Text('Registrar')),
+
+                    extButton(
+                    style: TextButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 16),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+
+                    },
+                    child: const Text('Regresar')),
                 // Text(
                 //   _data,
                 //   style: const TextStyle(
