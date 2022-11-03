@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterprojects/pages/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -14,13 +15,6 @@ class _RegisterPageState extends State<RegisterPage> {
   final _password = TextEditingController();
   final _rePassword = TextEditingController();
 
-  String _data = "";
-
-  // //void _onRegisterButtonClicked() {
-  //   setState(() {
-  //     _data = "Nombre: ${_name.text} \nCorreo electronico: ${_email.text}";
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                     child: const Text('Registrar')),
 
-                    extButton(
+                TextButton(
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 16),
                     ),
