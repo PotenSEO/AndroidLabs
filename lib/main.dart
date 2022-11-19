@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutterprojects/pages/login_page.dart';
-import 'package:flutterprojects/pages/register_page.dart';
+import 'package:Androidlab/pages/login_page.dart';
+import 'package:Androidlab/pages/register_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 
 void main() {
+  /*WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlataform
+  );*/
   runApp(const MyApp());
 }
 

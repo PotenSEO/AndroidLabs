@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterprojects/pages/register_page.dart';
+import 'package:Androidlab/pages/register_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                       textStyle: const TextStyle(fontSize: 16),
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
 
                     },
                     child: const Text('Registrarse')),
