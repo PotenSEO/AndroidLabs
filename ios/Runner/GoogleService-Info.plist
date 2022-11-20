@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.androidlab.flutterprojects</string>
+	<string>com.androidlab.androidlabs</string>
 	<key>PROJECT_ID</key>
 	<string>androidlab-e2a05</string>
 	<key>STORAGE_BUCKET</key>

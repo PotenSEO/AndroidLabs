@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:981620266647:android:8ded978cb3c382d393bbd2",
         "android_client_info": {
-          "package_name": "com.androidlab.flutterprojects"
+          "package_name": "com.androidlab.androidlabs"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "981620266647-g5ohd474sda5o40mphonse7r5ok8kk96.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.androidlab.flutterprojects"
+                "bundle_id": "com.androidlab.androidlabs"
               }
             }
           ]

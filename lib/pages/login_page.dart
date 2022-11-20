@@ -12,6 +12,34 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _email = TextEditingController();
   final _password = TextEditingController();
+  FirebaseAuth auth = FirebaseAuth.instance;
+  late final mensaje msg;
+
+  void validarUsuario() async {
+    try {
+      final user = await auth.signInWithEmailAndPassword(
+          email: _email.text, password: _password.text);
+      if (user != null) {
+        msg.mostrarMensaje("Bienvenido!!!!");
+        /*Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const main()));*/
+      }
+    } on FirebaseAuthException catch (e) {
+      //most-rarMensaje("${e.code}");
+
+      if (e.code == "invalid-email") {
+        msg.mostrarMensaje("El formato del Email no es correcto.");
+      } else if (e.code == "user-not-found") {
+        msg.mostrarMensaje("El usuario no esta registrado.");
+      } else if (e.code == "wrong-password") {
+        msg.mostrarMensaje("Contraseña Incorrecta.");
+      } else if (e.code == "unknown") {
+        msg.mostrarMensaje("Complete los datos.");
+      } else if (e.code == "network-request-failed") {
+        msg.mostrarMensaje("Revise su conexion a internet.");
+      }
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Text(
-                  'Iniciar Seccion',
+                  'Iniciar Sesion',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
@@ -69,15 +97,16 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 30.0,
                 ),
-                ElevatedButton( onPressed: () {}, child: const Text('Iniciar seccion'),
+                ElevatedButton(
+                  onPressed: () {}, child: const Text('Iniciar sesion'),
                 ),
-                  TextButton(
+                TextButton(
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 16),
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
-
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => const RegisterPage()));
                     },
                     child: const Text('Registrarse')),
                 // Text(
@@ -92,4 +121,45 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-}
+}  
+  
+class mensaje{
+
+  late BuildContext context;
+
+  mensaje(this.context);
+
+
+  void mostrarMensaje(String mensaje){
+  final pantalla=ScaffoldMessenger.of(context);
+  pantalla.showSnackBar(
+  SnackBar(
+  content: Text(mensaje, style: const TextStyle(fontSize: 20),),
+  backgroundColor: const Color(0xFFD50000),
+  duration: const Duration(seconds: 10),
+  action: SnackBarAction(
+  label: 'Registrese',
+  onPressed: (){
+  pantalla.hideCurrentSnackBar;
+  Navigator.push(context, MaterialPageRoute(builder: (context)=> register_page()));
+  }
+
+  ),
+  )
+  );
+  }
+
+  void mensajeOk(String mensaje){
+  final pantalla=ScaffoldMessenger.of(context);
+  pantalla.showSnackBar(
+  SnackBar(
+  content: Text(mensaje, style: const TextStyle(fontSize: 20),),
+  backgroundColor: const Color(0xFF4CAF50),
+  duration: const Duration(seconds: 10),
+  )
+  );
+  }
+
+  register_page() {}
+  }
+

@@ -64,6 +64,6 @@ class DefaultFirebaseOptions {
     projectId: 'androidlab-e2a05',
     storageBucket: 'androidlab-e2a05.appspot.com',
     iosClientId: '981620266647-g5ohd474sda5o40mphonse7r5ok8kk96.apps.googleusercontent.com',
-    iosBundleId: 'com.androidlab.flutterprojects',
+    iosBundleId: 'com.androidlab.androidlabs',
   );
 }
