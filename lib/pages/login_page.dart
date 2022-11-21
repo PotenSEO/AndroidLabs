@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:Androidlab/pages/register_page.dart';
+import 'package:Androidlab/pages/splash_page.dart';
+import 'package:Androidlab/pages/poi_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
@@ -21,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
           email: _email.text, password: _password.text);
       if (user != null) {
         msg.mostrarMensaje("Bienvenido!!!!");
-        /*Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const main()));*/
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PoiPage()));
       }
     } on FirebaseAuthException catch (e) {
       //most-rarMensaje("${e.code}");
@@ -40,9 +42,9 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
+    msg = mensaje(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
@@ -64,7 +66,6 @@ class _LoginPageState extends State<LoginPage> {
                 const Icon(
                   Icons.login,
                   size: 90,
-
                 ),
                 const SizedBox(
                   height: 16.0,
@@ -98,15 +99,20 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30.0,
                 ),
                 ElevatedButton(
-                  onPressed: () {}, child: const Text('Iniciar sesion'),
+                  onPressed: () {
+                    validarUsuario();
+                  },
+                  child: const Text('Iniciar sesion'),
                 ),
                 TextButton(
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 16),
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => const RegisterPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const PoiPage()));
                     },
                     child: const Text('Registrarse')),
                 // Text(
@@ -121,45 +127,41 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-}  
-  
-class mensaje{
+}
 
+class mensaje {
   late BuildContext context;
-
   mensaje(this.context);
-
-
-  void mostrarMensaje(String mensaje){
-  final pantalla=ScaffoldMessenger.of(context);
-  pantalla.showSnackBar(
-  SnackBar(
-  content: Text(mensaje, style: const TextStyle(fontSize: 20),),
-  backgroundColor: const Color(0xFFD50000),
-  duration: const Duration(seconds: 10),
-  action: SnackBarAction(
-  label: 'Registrese',
-  onPressed: (){
-  pantalla.hideCurrentSnackBar;
-  Navigator.push(context, MaterialPageRoute(builder: (context)=> register_page()));
+  void mostrarMensaje(String mensaje) {
+    final pantalla = ScaffoldMessenger.of(context);
+    pantalla.showSnackBar(SnackBar(
+      content: Text(
+        mensaje,
+        style: const TextStyle(fontSize: 20),
+      ),
+      backgroundColor: const Color(0xFF263238),
+      duration: const Duration(seconds: 10),
+      action: SnackBarAction(
+          label: 'Registrese',
+          onPressed: () {
+            pantalla.hideCurrentSnackBar;
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => register_page()));
+          }),
+    ));
   }
 
-  ),
-  )
-  );
-  }
-
-  void mensajeOk(String mensaje){
-  final pantalla=ScaffoldMessenger.of(context);
-  pantalla.showSnackBar(
-  SnackBar(
-  content: Text(mensaje, style: const TextStyle(fontSize: 20),),
-  backgroundColor: const Color(0xFF4CAF50),
-  duration: const Duration(seconds: 10),
-  )
-  );
+  void mensajeOk(String mensaje) {
+    final pantalla = ScaffoldMessenger.of(context);
+    pantalla.showSnackBar(SnackBar(
+      content: Text(
+        mensaje,
+        style: const TextStyle(fontSize: 20),
+      ),
+      backgroundColor: const Color(0xFF4CAF50),
+      duration: const Duration(seconds: 10),
+    ));
   }
 
   register_page() {}
-  }
-
+}

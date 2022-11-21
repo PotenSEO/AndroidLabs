@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:Androidlab/pages/login_page.dart';
+import 'package:Androidlab/pages/splash_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -14,10 +14,11 @@ class _RegisterPageState extends State<RegisterPage> {
   final _email = TextEditingController();
   final _password = TextEditingController();
   final _rePassword = TextEditingController();
-
+  //late final mensaje msg;
 
   @override
   Widget build(BuildContext context) {
+    //msg = mensaje(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
@@ -41,8 +42,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 ),
                 //Image (image: AssetImage('assets/images/logo.png')),
-
-
                 const SizedBox(
                   height: 16.0,
                 ),
