@@ -27,7 +27,7 @@ class _MenuPageState extends State<MenuPage> {
               decoration: const BoxDecoration(
                   color: Colors.blue
               ),
-              child: const Icon(Icons.account_circle_outlined, size: 120, color: Colors.greenAccent,)
+              child: const Icon(Icons.account_circle_outlined, size: 120, color: Colors.white,)
           ),
           Column(
             children: [
@@ -40,7 +40,7 @@ class _MenuPageState extends State<MenuPage> {
                 leading: const Icon(
                 Icons.pin_drop, size: 30, color: Colors.black,),
                 title: const Text("Machu Picchu", style: TextStyle( fontSize: 20)),
-                textColor: Colors.blue,
+                textColor: Colors.indigo,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> PoiPage()));
@@ -50,7 +50,7 @@ class _MenuPageState extends State<MenuPage> {
                 leading: const Icon(
                   Icons.pin_drop, size: 30, color: Colors.black,),
                 title: const Text("Taj-Mahal", style: TextStyle( fontSize: 20)),
-                textColor: Colors.blue,
+                textColor: Colors.indigo,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MenuPage()));
@@ -60,7 +60,7 @@ class _MenuPageState extends State<MenuPage> {
                 leading: const Icon(
                   Icons.pin_drop, size: 30, color: Colors.black,),
                 title: const Text("Coliseo Romano", style: TextStyle( fontSize: 20)),
-                textColor: Colors.blue,
+                textColor: Colors.indigo,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MenuPage()));
@@ -70,7 +70,7 @@ class _MenuPageState extends State<MenuPage> {
                 leading: const Icon(
                   Icons.pin_drop, size: 30, color: Colors.black,),
                 title: const Text("Piramides de Egipto", style: TextStyle( fontSize: 20)),
-                textColor: Colors.blue,
+                textColor: Colors.indigo,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MenuPage()));
@@ -79,7 +79,7 @@ class _MenuPageState extends State<MenuPage> {
               ListTile(
                 leading: const Icon(Icons.exit_to_app, size: 20, color: Colors.black,),
                 title: const Text("Salir", style: TextStyle( fontSize: 20)),
-                textColor: Colors.blue,
+                textColor: Colors.black,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const LoginPage()));
@@ -104,14 +104,14 @@ class menuInferior extends StatelessWidget {
       unselectedItemColor: Colors.white,
       items: const [
         BottomNavigationBarItem(
-            icon: Icon(Icons.app_registration,size: 30,),
-            label: "Mis Mascotas"
+            icon: Icon(Icons.home,size: 30,),
+            label: "Inicio"
         ),
         BottomNavigationBarItem(
-            icon: Icon(Icons.app_registration,size: 30,),
-            label: "Paseadores"),
+            icon: Icon(Icons.account_box,size: 30,),
+            label: "Perfil"),
         BottomNavigationBarItem(
-            icon: Icon(Icons.app_registration,size: 30,),
+            icon: Icon(Icons.favorite,size: 30,),
             label: "Favoritos")
       ],
       onTap: (indice){
