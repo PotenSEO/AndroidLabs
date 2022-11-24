@@ -48,8 +48,8 @@ class _MenuPageState extends State<MenuPage> {
               ),
               ListTile(
                 leading: const Icon(
-                  Icons.app_registration,size: 30,),
-                title: const Text("Mis Mascotas", style: TextStyle( fontSize: 20)),
+                  Icons.pin_drop, size: 30, color: Colors.black,),
+                title: const Text("Taj-Mahal", style: TextStyle( fontSize: 20)),
                 textColor: Colors.blue,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
@@ -58,8 +58,8 @@ class _MenuPageState extends State<MenuPage> {
               ),
               ListTile(
                 leading: const Icon(
-                  Icons.app_registration,size: 30,),
-                title: const Text("Mis Mascotas", style: TextStyle( fontSize: 20)),
+                  Icons.pin_drop, size: 30, color: Colors.black,),
+                title: const Text("Coliseo Romano", style: TextStyle( fontSize: 20)),
                 textColor: Colors.blue,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
@@ -68,8 +68,8 @@ class _MenuPageState extends State<MenuPage> {
               ),
               ListTile(
                 leading: const Icon(
-                  Icons.app_registration,size: 30,),
-                title: const Text("Mis Mascotas", style: TextStyle( fontSize: 20)),
+                  Icons.pin_drop, size: 30, color: Colors.black,),
+                title: const Text("Piramides de Egipto", style: TextStyle( fontSize: 20)),
                 textColor: Colors.blue,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
@@ -77,7 +77,7 @@ class _MenuPageState extends State<MenuPage> {
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.exit_to_app, size: 20, color: Colors.blue,),
+                leading: const Icon(Icons.exit_to_app, size: 20, color: Colors.black,),
                 title: const Text("Salir", style: TextStyle( fontSize: 20)),
                 textColor: Colors.blue,
                 onTap: (){
