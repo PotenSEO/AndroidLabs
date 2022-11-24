@@ -39,9 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 Icon(
                   Icons.app_registration,size: 90,
-
                 ),
-                //Image (image: AssetImage('assets/images/logo.png')),
                 const SizedBox(
                   height: 16.0,
                 ),

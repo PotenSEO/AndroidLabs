@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Androidlab/pages/register_page.dart';
-import 'package:Androidlab/pages/splash_page.dart';
-import 'package:Androidlab/pages/poi_page.dart';
+import 'package:Androidlab/pages/menu_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
@@ -18,12 +17,13 @@ class _LoginPageState extends State<LoginPage> {
   late final mensaje msg;
 
   void validarUsuario() async {
+    mensaje(this.context);
     try {
       final user = await auth.signInWithEmailAndPassword(
           email: _email.text, password: _password.text);
       if (user != null) {
         msg.mostrarMensaje("Bienvenido!!!!");
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PoiPage()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MenuPage()));
       }
     } on FirebaseAuthException catch (e) {
       //most-rarMensaje("${e.code}");
@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const PoiPage()));
+                              builder: (context) => const RegisterPage()));
                     },
                     child: const Text('Registrarse')),
                 // Text(
