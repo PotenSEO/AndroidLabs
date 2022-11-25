@@ -27,5 +27,8 @@ flutter:
    assets:
     - assets/images/logo.png
     - assets/images/machupicchu.png
+    - assets/images/coliseo-de-roma.jpg
+    - assets/images/taj-mahal.jpg
+    - assets/images/piramegipto.jpg
 
    uses-material-design: true

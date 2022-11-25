@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:Androidlab/pages/login_page.dart';
 import 'package:Androidlab/pages/poi_page.dart';
+import 'package:Androidlab/pages/tajmahal_page.dart';
+import 'package:Androidlab/pages/colromano_page.dart';
+import 'package:Androidlab/pages/piramegipto_page.dart';
+
 
 class MenuPage extends StatefulWidget {
 
@@ -16,7 +20,7 @@ class _MenuPageState extends State<MenuPage> {
     // TODO: implement initState
     super.initState();
     String? correo=FirebaseAuth.instance.currentUser?.email.toString();
-    print("----------------------->>>>>>>>>>>>>>>< "+correo!);
+    print("----------------------->>>>>>>>>>>>>>>< correo!"); // se corrige error del boton regreso
   }
   @override
   Widget build(BuildContext context) {
@@ -53,7 +57,7 @@ class _MenuPageState extends State<MenuPage> {
                 textColor: Colors.indigo,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MenuPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> TajmahalPage()));
                 },
               ),
               ListTile(
@@ -63,7 +67,7 @@ class _MenuPageState extends State<MenuPage> {
                 textColor: Colors.indigo,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MenuPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ColromanoPage()));
                 },
               ),
               ListTile(
@@ -73,7 +77,7 @@ class _MenuPageState extends State<MenuPage> {
                 textColor: Colors.indigo,
                 onTap: (){
                   FirebaseAuth.instance.signOut();
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MenuPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> PiramegiptoPage()));
                 },
               ),
               ListTile(
